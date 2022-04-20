@@ -4,7 +4,7 @@ const path = require("path");
 const newNote = (note, notesArray) => {
   notesArray.push(note);
   fs.writeFileSync(
-    path.join(__dirname, "/db/db.json"),
+    path.join(__dirname, "../db/db.json"),
     JSON.stringify({ notes: notesArray }, null, 2)
   );
 };
@@ -20,7 +20,7 @@ const editNote = (editedNote, notesArray) => {
   notesArray.splice(index, 0, editedNote);
 
   fs.writeFileSync(
-    path.join(__dirname, "/db/db.json"),
+    path.join(__dirname, "../db/db.json"),
     JSON.stringify({ notes: notesArray }, null, 2)
   );
 };
@@ -30,7 +30,7 @@ const removeNote = (note, notesArray) => {
   notesArray.splice(index, 1);
 
   fs.writeFileSync(
-    path.join(__dirname, "/db/db.json"),
+    path.join(__dirname, "../db/db.json"),
     JSON.stringify({ notes: notesArray }, null, 2)
   );
 };
